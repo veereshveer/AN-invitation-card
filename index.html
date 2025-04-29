@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archana weds Naveen Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      margin: 10px;
+      padding: 30px;
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(to bottom right, #fdeef4, #fff3e6);
+      color: #5a3e36;
+      text-align: center;
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+   
+    }
+
+    .invitation {
+        max-width: 90%;
+        width: 90%;
+        padding: 50px;
+        background-color: rgba(233, 143, 143, 0.6);
+        border-radius: 30px;
+        box-shadow: 0 5px 30px rgba(223, 136, 136, 0.3);
+        margin: 0 auto;
+    }    
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .date {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #a0522d;
+    }
+
+    .map-button {
+      background-color: #e2725b;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .floral {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- <img src="https://i.ibb.co/DtY5dhV/floral-top.png" class="floral" alt="flowers" /> -->
+
+  <div class="invitation" data-aos="fade-up">
+    <h1>Archana weds Naveen</h1>
+    <div class="details">Please join us for our wedding celebration</div>
+    <div class="date">Friday, 13th June 2025</div>
+    <div class="details"><u>Muhurtha : </u>12:15 PM</div>
+    <div class="details">
+      <u>Venue : </u> Manikya Soudha, Manikya Nagar, Humanabad (Tq), Bidar (Dist)
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <button class="map-button" href="https://maps.app.goo.gl/8HxQv1i8o6zuH3Fv6?g_st=aw" target="_blank">Click to Google Maps</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const weddingDate = new Date("2025-06-13T12:15:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
